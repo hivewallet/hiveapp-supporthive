@@ -8,18 +8,24 @@
 var bitcoin = bitcoin || {
     getClientInfo: function (callback) {
         var info = {
-            firstname: "Homer",
-            lastname:  "Simpson",
-            email:     "homer@fake.com",
-            address:   "poqjer23rfc234laq",
-            street:    "next to Flanders",
-            zipcode:   "12233",
-            city:      "Springfield",
-            country:   "USA"
+            firstname: 'Homer',
+            lastname:  'Simpson',
+            email:     'homer@fake.com',
+            address:   'poqjer23rfc234laq',
+            street:    'next to Flanders',
+            zipcode:   '12233',
+            city:      'Springfield',
+            country:   'USA'
         };
 
         return callback(info);
+    },
+
+    sendCoins: function (hash, amount, callback) {
+        return callback(true, hash);
+    },
+
+    sendCoinsForAddress: function(hash, amount, callback) {
+        return callback(true, hash);
     }
-
-
 };
