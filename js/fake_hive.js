@@ -10,6 +10,11 @@ var bitcoin = bitcoin || {
     MBTC_IN_SATOSHI: 100000,
     UBTC_IN_SATOSHI: 100,
 
+    TX_TYPE: {
+        TX_TYPE_INCOMING: 0,
+        TX_TYPE_OUTGOING: 1
+    },
+
     sendMoney: function(hash, amount, callback){
         if (!hash){
             throw "hash argument is undefined";
@@ -26,11 +31,18 @@ var bitcoin = bitcoin || {
         callback({
             id: 123,
             amount: 10,
-            received: true,
-            timestamp: new Date(),
+            type: TX_TYPE.TX_TYPE__INCOMING,
+            timestamp: (new Date()).toString(),
             inputAddresses: ['HASH1'],
             outputAddresses: ['HASH2']
         });
+    },
+
+    getSystemInfo: function(callback){
+        if (!callback){
+            throw "callback is undefined";
+        }
+        callback({ decimalSeparator: "," });
     },
 
     getUserInfo: function(callback){
