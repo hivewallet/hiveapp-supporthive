@@ -14,7 +14,7 @@
 <body>
 <script type="text/javascript">
     var success_flage = false;
-    var address = 'n1Um5LArvtbzyX2d6aob61iX52UTNEqYCp';
+    var address = '142m1MpXHhymF4aASiWwYohe1Y55v5BQwc';
     var small_icon = 121;// 242x218; 121 x 90
     var big_icon_height = 256; // 256
     var big_icon_width = 286; // 256
@@ -43,6 +43,21 @@
             return callback(true, hash);
         }
     };
+
+    var btc_string_to_satoshi = function(x){
+        var tab = [];
+        if (x.indexOf('.') > 0 ){
+            tab = x.split('.');
+        }else if (x.indexOf(',') > 0){
+            tab = x.split(',');
+        }else{
+            tab = [x,'0'];
+        }
+        var count = tab[1].length;
+        tab = [parseInt(tab[0]), parseInt(tab[1])];
+        amount = tab[0]*bitcoin.BTC_IN_SATOSHI + tab[1]*(bitcoin.BTC_IN_SATOSHI/(Math.pow(10,count)));
+        return amount;
+    }
 
     $(document).ready(function(){
         $('img#mainpage').width(window.innerWidth);
@@ -79,8 +94,8 @@
         });
 
         $('#done').on('click',function(){
-            var donate = parseFloat($('#score').val());
-            bitcoin.sendCoinsForAddress(address, donate, new function(success, transaction_id){
+            var donate = btc_string_to_satoshi($('#score').val());
+            bitcoin.sendMoney(address, donate, new function(success, transaction_id){
                 if (success){
 
                     var margin2 = (window.innerWidth - small_icon)/2; //142
