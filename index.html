@@ -1,145 +1,47 @@
 <!DOCTYPE html>
 <html>
+<head>
     <title>Hive Support</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
-    <link rel="stylesheet" href="./css/homeless.css">
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <link rel="stylesheet" href="css/hive_support.css"/>
+    <script src="js/hive_mock.js" type="text/javascript"></script>
+    <script src="js/hive_support.js" type="text/javascript"></script>
+</head>
+<body onload="init()">
+<div id="background_hive">
+    <div class="display">
+        <div class="container">
+            <div>
+               <h1 class="headText2">You've just<br/>
+                        helped hive<br/>
+                        to grow!</h1>
+               <h1 class="headText1">Send us some  &#x42&#x20E6s!</h1>
+               <h3 class="headText1">(and see what will happen)</h3>
+                <div class="back_img">
+                </div>
+            </div>
+        </div>
+        <div class="container">
 
-    <head>
-        <title>Hive Support</title>
-    </head>
-
-<body>
-<script type="text/javascript">
-    var success_flage = false;
-    var address = '142m1MpXHhymF4aASiWwYohe1Y55v5BQwc';
-    var small_icon = 121;// 242x218; 121 x 90
-    var big_icon_height = 256; // 256
-    var big_icon_width = 286; // 256
-
-    var bitcoin = bitcoin || {
-        getClientInfo: function (callback) {
-            var info = {
-                firstname: 'Homer',
-                lastname:  'Simpson',
-                email:     'homer@fake.com',
-                address:   'poqjer23rfc234laq',
-                street:    'next to Flanders',
-                zipcode:   '12233',
-                city:      'Springfield',
-                country:   'USA'
-            };
-
-            return callback(info);
-        },
-
-        sendCoins: function (hash, amount, callback) {
-            return callback(true, hash);
-        },
-
-        sendCoinsForAddress: function(hash, amount, callback) {
-            return callback(true, hash);
-        }
-    };
-
-    var btc_string_to_satoshi = function(x){
-        var tab = [];
-        if (x.indexOf('.') > 0 ){
-            tab = x.split('.');
-        }else if (x.indexOf(',') > 0){
-            tab = x.split(',');
-        }else{
-            tab = [x,'0'];
-        }
-        var count = tab[1].length;
-        tab = [parseInt(tab[0]), parseInt(tab[1])];
-        amount = tab[0]*bitcoin.BTC_IN_SATOSHI + tab[1]*(bitcoin.BTC_IN_SATOSHI/(Math.pow(10,count)));
-        return amount;
-    }
-
-    $(document).ready(function(){
-        $('img#mainpage').width(window.innerWidth);
-        $('#button').css('bottom',$('#footer').height());
-        $('#img_hive').height(window.innerHeight -$('[data-role=header]').height() );
-        $('#score').css('margin-bottom',($('#don_button').height()-$('#score').height())/2)
-
-        var margin = (window.innerWidth - $('#button').width())/2;
-        var margin2 = (window.innerWidth - small_icon)/2; //142
-            $('#button').css('margin-left',margin);
-            $('#button').css('margin-right',margin);
-            $('#imggh').css('margin-left',margin);
-            $('#imggh').css('margin-right',margin);
-            $('#hive_icon').css('margin-left',margin2);
-            $('#hive_icon').css('margin-right',margin2);
-
-        $(window).resize(function(){
-            $('#img_cat').height(window.innerHeight -$('[data-role=header]').height() );
-            var margin = (window.innerWidth - $('#button').width())/2;
-            $('#button').css('margin-left',margin);
-            $('#button').css('margin-right',margin);
-            $('#imggh').css('margin-left',margin);
-            $('#imggh').css('margin-right',margin);
-            if(success_flage){
-                var margin2 = (window.innerWidth - big_icon_width)/2; //155
-                console.log('margin with success flag:'+margin2.toString())
-            } else {
-                var margin2 = (window.innerWidth - small_icon)/2; //142
-                console.log('margin without success flag:'+margin2.toString())
-            }
-
-            $('#hive_icon').css('marginLeft',margin2);
-            $('#hive_icon').css('marginRight',margin2);
-        });
-
-        $('#done').on('click',function(){
-            var donate = btc_string_to_satoshi($('#score').val());
-            bitcoin.sendMoney(address, donate, new function(success, transaction_id){
-                if (success){
-
-                    var margin2 = (window.innerWidth - small_icon)/2; //142
-                    $('#imggh').attr("src" , "./css/images/hive_slogan_head_2.png");
-                    $('#imgfoot').attr("src", "./css/images/hive_slogan_foot_2.png");
-
-                    $('#hive_icon').animate({
-                        width: big_icon_width.toString()+"px",
-                        height: big_icon_height.toString()+"px",
-                        marginLeft:  margin.toString()+'px',
-                        marginRight: margin.toString()+'px'
-                    }, 'slow');
-                    if (donate < 5){
-                        console.log('hive support done <5');
-                    } else if (donate >= 5){
-                        console.log('hive support done >5');
-                    }
-                }
-            });
-        });
-    });
-</script>
-
-<div data-role="page">
-    <div data-role="context">
-        <div id="img_hive" class="cat">
-            <img id="imggh" class="gh" src="./css/images/hive_slogan_head_1.png">
-
-            <img id="hive_icon" class="hive_icon" src="./css/images/hive_small.png">
         </div>
     </div>
-    <div id="button">
-        <img id="imgfoot" class="abs" src="./css/images/hive_slogan_foot_1.png">
-        <div id="don_button" class="abs">
-            <input id="score" type="text" value="1,00" class="transparent-input">
-            <img src="./css/images/donate.png">
+    <div  class="fixed">
+        <h5 id="fixed_slogan_1">Hive is a free app, so your support means a lot.</h5>
+        <h2  id="fixed_slogan_2">Your &#x42&#x20E6 is warmly welcomed, <br/>
+            and will be put to work right away! </h2>
+        <div id="border_radius" class="container-button">
+            <ul id="display-inline-block">
+                <li><h4>Donate:</h4></li>
+                <li><img src="css/images/B.png"/></li>
+                <li><input id="in_cash" class="small" type="text" value="1.00" onchange="validateValue(this);return false;"/></li>
+           </ul>
         </div>
     </div>
-
-    <div id="footer" data-role="footer" data-theme="c" >
-        <div align="right">
-            <img id="done" src="./css/images/done.png">
+    <div class="container-footer">
+        <div align="right" onclick="send();return false;">
+            <img id="done" src="css/images/done.png">
         </div>
     </div>
 </div>
+
 </body>
 </html>

@@ -1,0 +1,134 @@
+body {
+    overflow:hidden;
+    color: gold;
+}
+
+#background_hive{
+    overflow: hidden;
+    min-width:2000px;
+    min-height:2100px;
+    background: url('./images/background.png') center center no-repeat;
+}
+
+div.display{
+    position:fixed;
+    text-align:center;
+    width:100%;
+}
+div.container{
+    display: table;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+div.container-footer{
+    background:#EEEEEE;
+    bottom:0;
+	position:fixed !important;
+	top: auto !important;
+	width:100%;
+}
+div.fixed{
+    bottom:60px;
+    text-align: center;
+	position:fixed !important;
+	top: auto !important;
+    width:100%;
+}
+div.container-button{
+    display:table;
+	width:40%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 230px;
+    max-width: 300px;
+
+}
+
+div#border_radius{
+    border: goldenrod;
+    border-style: solid;
+    background:#EEEEEE;
+    background-origin: padding-box;
+    background-size: auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+div.back_img{
+    background-image: url('./images/hive_small.png');
+    width:242px;
+    height: 218px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.row div.row{
+    display:table-row;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul#display-inline-block,
+ul#display-inline-block li {
+    color: black;
+    margin: 0;
+    padding: 1px;
+
+}
+
+ul#display-inline-block li {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left:2px;
+}
+
+input.small{
+    width: 60px;
+    height:30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+img.small{
+    width-max:242px;
+    width-min: 242px;
+}
+
+img.big{
+    width-max:286px;
+    width-min: 286px;
+}
+img#done{
+    width: 90px;
+    height: 30px;
+    margin: 10px;
+}
+h5#fixed_slogan_1{
+    margin: 4px;
+}
+
+@-webkit-keyframes hive_icon {
+  0% {
+        background-image: url('./images/hive_small.png');
+        width:  242px;
+        height: 218px;
+  }
+  100% {
+        background-image: url('./images/hive_big.png');
+        width:  286px;
+        height: 258px;
+  }
+}
+
+div.animation {
+  -webkit-animation-name: hive_icon;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+}

@@ -1,9 +1,5 @@
 /**
- * Created with PyCharm.
- * User: dwa
- * Date: 12.09.2013
- * Time: 11:40
- * To change this template use File | Settings | File Templates.
+ * Created by marcinra on 10/18/13.
  */
 var bitcoin = bitcoin || {
     BTC_IN_SATOSHI: 100000000,
@@ -52,7 +48,26 @@ var bitcoin = bitcoin || {
             firstName: 'Homer',
             lastName:  'Simpson',
             email:     'homer@fake.com',
-            address:   'poqjer23rfc234laq',
+            address:   'poqjer23rfc234laq'
         });
     }
 };
+
+bitcoin['btc_string_to_satoshi'] = function(x){
+        if( typeof x === 'string'){
+            var tab = [];
+            if (x.indexOf('.') > 0 ){
+                tab = x.split('.');
+            }else if (x.indexOf(',') > 0){
+                tab = x.split(',');
+            }else{
+                tab = [x,'0'];
+            }
+            var count = tab[1].length;
+            tab = [parseInt(tab[0]), parseInt(tab[1])];
+            amount = tab[0]*bitcoin.BTC_IN_SATOSHI + tab[1]*(bitcoin.BTC_IN_SATOSHI/(Math.pow(10,count)));
+            return amount;
+        } else {
+            return x*bitcoin.BTC_IN_SATOSHI;
+        }
+    }
