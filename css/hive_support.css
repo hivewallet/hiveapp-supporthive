@@ -9,6 +9,7 @@ body {
     min-width:2000px;
     min-height:2100px;
     background: url('./images/background.png') center center no-repeat;
+    font-family:"Aleo-Regular", Aleo, serif;
 }
 
 div.display{
@@ -40,31 +41,44 @@ div.fixed{
 }
 div.container-button{
     display:table;
-	width:40%;
+	width:60%;
     margin-left: auto;
     margin-right: auto;
     min-width: 230px;
-    max-width: 300px;
-
+    max-width: 380px;
 }
 
 div#border_radius{
-    border: goldenrod;
-    border-style: solid;
     background:#EEEEEE;
     background-origin: padding-box;
     background-size: auto;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 div.back_img{
-    background-image: url('./images/hive_small.png');
-    width:242px;
+    background: url('./images/hive_small.png') no-repeat;
+    background-position:center;
+    background-size:142px 127px;
+    width:  242px;
     height: 218px;
-    margin-left: auto;
-    margin-right: auto;
+
+}
+
+div.img_container{
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin-top: -121px;
+    margin-left: -109px;
+    width:  242px;
+    height: 218px;
+}
+
+input#in_cash{
+    border-style: none;
+    background:#EEEEEE;
 }
 
 img.row div.row{
@@ -95,8 +109,8 @@ input.small{
 }
 
 img.small{
-    width-max:242px;
-    width-min: 242px;
+    width-max:142px;
+    width-min: 142px;
 }
 
 img.big{
@@ -114,14 +128,18 @@ h5#fixed_slogan_1{
 
 @-webkit-keyframes hive_icon {
   0% {
-        background-image: url('./images/hive_small.png');
+        background: url('./images/hive_small.png') no-repeat;
+        background-position:center;
+        background-size:142px 127px;
         width:  242px;
         height: 218px;
   }
   100% {
-        background-image: url('./images/hive_big.png');
-        width:  286px;
-        height: 258px;
+        background: url('./images/hive_small.png') no-repeat;
+        background-position:center;
+        background-size:242px 218px;
+        width:  242px;
+        height: 218px;
   }
 }
 
