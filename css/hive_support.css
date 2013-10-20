@@ -1,7 +1,8 @@
 body {
     overflow:hidden;
-    color: gold;
+    color: #fadf68; /* gold */
     margin: 0px;
+    font-family:"Aleo-Regular", Aleo, serif;
 }
 
 #background_hive{
@@ -132,4 +133,16 @@ div.animation {
   -webkit-animation-direction: alternate;
   -webkit-animation-timing-function: linear;
   -webkit-animation-fill-mode: forwards;
+}
+
+img#btc {
+    width:24px;
+    position:relative;
+    top:6px;
+}
+
+img#btc_small{
+    width:18px;
+    position:relative;
+    top:6px;
 }
