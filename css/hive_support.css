@@ -3,13 +3,14 @@ body {
     color: #fadf68; /* gold */
     margin: 0px;
     font-family:"Aleo-Regular", Aleo, serif;
+    letter-spacing: 1px;
 }
 
 #background_hive{
     overflow: hidden;
     min-width:2000px;
     min-height:2100px;
-    background: url('./images/background.png') center center no-repeat;
+    background: url('images/background.png') center center no-repeat;
     font-family:"Aleo-Regular", Aleo, serif;
 }
 
@@ -59,7 +60,7 @@ div#border_radius{
 }
 
 div.back_img{
-    background: url('./images/hive_small.png') no-repeat;
+    background: url('images/hive_small.png') no-repeat;
     background-position:center;
     background-size:142px 127px;
     width:  242px;
@@ -129,14 +130,14 @@ h5#fixed_slogan_1{
 
 @-webkit-keyframes hive_icon {
   0% {
-        background: url('./images/hive_small.png') no-repeat;
+        background: url('images/hive_small.png') no-repeat;
         background-position:center;
         background-size:142px 127px;
         width:  242px;
         height: 218px;
   }
   100% {
-        background: url('./images/hive_small.png') no-repeat;
+        background: url('images/hive_small.png') no-repeat;
         background-position:center;
         background-size:242px 218px;
         width:  242px;

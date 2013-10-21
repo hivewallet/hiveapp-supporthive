@@ -52,22 +52,3 @@ var bitcoin = bitcoin || {
         });
     }
 };
-
-bitcoin['btc_string_to_satoshi'] = function(x){
-        if( typeof x === 'string'){
-            var tab = [];
-            if (x.indexOf('.') > 0 ){
-                tab = x.split('.');
-            }else if (x.indexOf(',') > 0){
-                tab = x.split(',');
-            }else{
-                tab = [x,'0'];
-            }
-            var count = tab[1].length;
-            tab = [parseInt(tab[0]), parseInt(tab[1])];
-            amount = tab[0]*bitcoin.BTC_IN_SATOSHI + tab[1]*(bitcoin.BTC_IN_SATOSHI/(Math.pow(10,count)));
-            return amount;
-        } else {
-            return x*bitcoin.BTC_IN_SATOSHI;
-        }
-    }
