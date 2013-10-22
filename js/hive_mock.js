@@ -52,3 +52,15 @@ var bitcoin = bitcoin || {
         });
     }
 };
+
+var btc_string_to_satoshi = function(amount, separator){
+    var tab = [];
+    if (amount.indexOf(separator) > 0 ){
+        tab = amount.split(separator);
+    }else{
+        tab = [amount,'0'];
+    }
+    var count = tab[1].length;
+    tab = [parseInt(tab[0]), parseInt(tab[1])];
+    return tab[0]*bitcoin.BTC_IN_SATOSHI + tab[1]*(bitcoin.BTC_IN_SATOSHI/(Math.pow(10,count)));
+}
