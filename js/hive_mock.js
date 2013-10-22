@@ -1,6 +1,3 @@
-/**
- * Created by marcinra on 10/18/13.
- */
 var bitcoin = bitcoin || {
     BTC_IN_SATOSHI: 100000000,
     MBTC_IN_SATOSHI: 100000,
@@ -54,13 +51,18 @@ var bitcoin = bitcoin || {
 };
 
 var btc_string_to_satoshi = function(amount, separator){
-    var tab = [];
-    if (amount.indexOf(separator) > 0 ){
-        tab = amount.split(separator);
+    if (typeof(amount)=='string'){
+        var tab = [];
+        if (amount.indexOf(separator) > 0 ){
+            tab = amount.split(separator);
+        }else{
+            tab = [amount,'0'];
+        }
+        var count = tab[1].length;
+        tab = [parseInt(tab[0]), parseInt(tab[1])];
+        return tab[0]*bitcoin.BTC_IN_SATOSHI + tab[1]*(bitcoin.BTC_IN_SATOSHI/(Math.pow(10,count)));
     }else{
-        tab = [amount,'0'];
+        return Math.round(amount*bitcoin.BTC_IN_SATOSHI);
     }
-    var count = tab[1].length;
-    tab = [parseInt(tab[0]), parseInt(tab[1])];
-    return tab[0]*bitcoin.BTC_IN_SATOSHI + tab[1]*(bitcoin.BTC_IN_SATOSHI/(Math.pow(10,count)));
-}
+};
+
