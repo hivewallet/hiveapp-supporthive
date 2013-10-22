@@ -1,10 +1,8 @@
 @font-face {
-  font-family: Aleo-Regular;
-  src: local("Aleo-Regular"),
-  local("Aleo-Regular"),
-  url(Aleo-Regular.otf);
-  font-weight: bold;
+  font-family: 'Aleo-Regular';
+  src: url('Aleo-Regular.otf');
 }
+
 body {
     overflow:hidden;
     color: #fadf68; /* gold */
