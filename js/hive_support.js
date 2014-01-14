@@ -18,7 +18,6 @@ var send = function() {
   if (userAmountSatoshi > 0){
       bitcoin.sendMoney(donationAddress, userAmountSatoshi, runAnimations);
   }
-  runAnimations(true, null)
 }
 
 var runAnimations = function(success, transaction_id) {
