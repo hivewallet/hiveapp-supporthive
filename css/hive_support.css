@@ -1,172 +1,69 @@
 @font-face {
   font-family: 'Aleo-Regular';
-  src: url('Aleo-Regular.otf');
+  src: url('Aleo-Regular.otf') format('opentype');
 }
 
 body {
-    overflow:hidden;
-    color: #fadf68; /* gold */
-    margin: 0px;
-    font-family:"Aleo-Regular", Aleo, serif;
-    letter-spacing: 1px;
+  color: #fadf68; /* gold */
+  font-family: "Aleo-Regular", Aleo, serif;
+  letter-spacing: 1px;
+  background: url('../images/background.png') center center no-repeat;
+  background-size: 200%;
+  background-position: top right;
 }
 
-#background_hive{
-    overflow: hidden;
-    min-width:2000px;
-    min-height:2100px;
-    background: url('images/background.png') center center no-repeat;
-    font-family:"Aleo-Regular", Aleo, serif;
+h1, h2, h3, h4, h5, h6, input, select, textarea, button{font-family:inherit;}
+
+.back_img{
+  background: url('../images/hive_big.png') no-repeat;
+  background-position: center;
+  background-size: 144px 128px;
+  width: 100%;
+  height: 218px;
+  margin-top: 2em;
 }
 
-div.display{
-    position:fixed;
-    text-align:center;
-    width:100%;
-}
-div.container{
-    display: table;
-    width:90%;
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: middle;
+
+input[type="text"]
+{
+  background: transparent;
+  border: 1px solid black;
+  width: 8ex;
+  border: none;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 0.5ex;
 }
 
-div.container-footer{
-    background:#EEEEEE;
-    bottom:0;
-	position:fixed !important;
-	top: auto !important;
-	width:100%;
-}
-div.fixed{
-    bottom:60px;
-    text-align: center;
-	position:fixed !important;
-	top: auto !important;
-    width:100%;
-}
-div.container-button{
-    display:table;
-	width:60%;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 230px;
-    max-width: 380px;
+#senddiv {
+  color: black;
+  background-color: #EEEEEE;
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 125%;
+  padding: 1ex;
+  margin-top: 1em;
 }
 
-div#border_radius{
-    background:#EEEEEE;
-    background-origin: padding-box;
-    background-size: auto;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+#senddiv button[type="button"] {
+  margin-left: 3em;
 }
 
-div.back_img{
-    background: url('images/hive_small.png') no-repeat;
-    background-position:center;
-    background-size:142px 127px;
-    width:  242px;
-    height: 218px;
-
+.fixed-bottom {
+  position: fixed !important;
+  bottom: 1em;
+  top: auto !important;
+  right: 30px;
+  left: 30px;
 }
 
-div.img_container{
-    position:fixed;
-    top:50%;
-    left:50%;
-    margin-top: -121px;
-    margin-left: -109px;
-    width:  242px;
-    height: 218px;
-}
-
-input#in_cash{
-    border-style: none;
-    background:#EEEEEE;
-}
-
-img.row div.row{
-    display:table-row;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-ul#display-inline-block,
-ul#display-inline-block li {
-    color: black;
-    margin: 0;
-    padding: 1px;
-
-}
-
-ul#display-inline-block li {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left:2px;
-}
-
-input.small{
-    width: 60px;
-    height:30px;
-    text-align: center;
-    font-size: 20px;
-}
-
-img.small{
-    width-max:142px;
-    width-min: 142px;
-}
-
-img.big{
-    width-max:286px;
-    width-min: 286px;
-}
-img#done{
-    width: 90px;
-    height: 30px;
-    margin: 10px;
-}
-h5#fixed_slogan_1{
-    margin: 4px;
-}
-
-@-webkit-keyframes hive_icon {
-  0% {
-        background: url('images/hive_small.png') no-repeat;
-        background-position:center;
-        background-size:142px 127px;
-        width:  242px;
-        height: 218px;
-  }
-  100% {
-        background: url('images/hive_small.png') no-repeat;
-        background-position:center;
-        background-size:242px 218px;
-        width:  242px;
-        height: 218px;
-  }
-}
-
-div.animation {
-  -webkit-animation-name: hive_icon;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-direction: alternate;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-fill-mode: forwards;
-}
-
-img#btc {
-    width:24px;
-    position:relative;
-    top:6px;
-}
-
-img#btc_small{
-    width:18px;
-    position:relative;
-    top:6px;
+.animation {
+  webkit-animation-name: hive_icon;
+  webkit-animation-duration: 5s;
+  webkit-animation-iteration-count: 1;
+  webkit-animation-direction: alternate;
+  webkit-animation-timing-function: linear;
+  webkit-animation-fill-mode: forwards;
 }

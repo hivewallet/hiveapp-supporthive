@@ -1,48 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>Hive Support</title>
-    <link rel="stylesheet" href="css/hive_support.css"/>
-    <script src="js/hive_mock.js" type="text/javascript"></script>
-    <script src="js/hive_support.js" type="text/javascript"></script>
+  <title>Hive Support</title>
+
+  <script src="js/jquery-2.0.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/hive_support.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/hive_support.css"/>
 </head>
-<body onload="init()">
-<div id="background_hive">
-    <div class="display">
-        <div class="container">
-            <div>
-               <h1 class="headText2">You've just<br/>
-                        helped hive<br/>
-                        to grow!</h1>
-               <h1 class="headText1">Send us some  <img id="btc" src="css/images/bs.png"/>s!</h1>
-               <h3 class="headText1">(and see what will happen)</h3>
 
-            </div>
+<body>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 text-center">
+         <h2 class="headText1">Send us some <i class="fa fa-btc fa-lg"></i>s!</h2>
+         <h2 class="headText2">You just helped Hive to grow!</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="back_img">
+      </div>
+    </div>
+
+      <div class="row fixed-bottom text-center">
+
+        <div class="text-right">
+          <h3 id="fixed_slogan_1">Hive is a free app, so your support means a lot.</h3>
+          <h3 id="fixed_slogan_2">Your <i class="fa fa-btc fa-lg"></i> is greatly appreciated!</h3>
         </div>
 
-    </div>
-    <div class="img_container">
-        <div class="back_img">
-        </div>
-    </div>
-    <div  class="fixed">
-        <h5 id="fixed_slogan_1">Hive is a free app, so your support means a lot.</h5>
-        <h2  id="fixed_slogan_2">Your <img id="btc_small" src="css/images/bs.png"/> is warmly welcomed, <br/>
-            and will be put to work right away! </h2>
-        <div id="border_radius" class="container-button">
-            <ul id="display-inline-block">
-                <li><h4>Donate:</h4></li>
-                <li><img src="css/images/B.png"/></li>
-                <li><input id="in_cash" class="small" type="text" value="1.00" onchange="validateValue(this);return false;"/></li>
-           </ul>
-        </div>
-    </div>
-    <div class="container-footer">
-        <div align="right" onclick="send();return false;">
-            <img id="done" src="css/images/done.png">
-        </div>
-    </div>
-</div>
+        <div id="senddiv" class="text-center">
 
+            <input id="in_cash" type="text"> <span class="preferredBitcoinFormat">BTC</span>
+            <button type="button" id="send" class="btn btn-warning"> Donate <i class="fa fa-btc"></i></button>
+
+        </div> <!--/senddiv-->
+
+      </div><!--/fixed-bottom-->
+
+  </div><!--container-->
+
+  <script>
+    $(document).ready( init );
+  </script>
 </body>
 </html>

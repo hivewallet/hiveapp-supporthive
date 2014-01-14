@@ -1,8 +1,8 @@
 {
   "name": "Support Hive",
-  "id": "supporthive2",
-  "version": "1.0",
-  "author": "Recoded.co",
+  "id": "supporthive",
+  "version": "3.0",
+  "author": "Taylor Gerring",
   "description": "Support Hive",
-  "icon": "icon.png"
+  "icon": "images/icon.png"
 }
