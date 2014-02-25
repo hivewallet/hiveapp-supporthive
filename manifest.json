@@ -1,7 +1,7 @@
 {
   "name": "Support Hive",
   "id": "com.hivewallet.supporthive",
-  "version": "3.0",
+  "version": "3.0.1",
   "author": "Taylor Gerring",
   "description": "Help us continue building Hive!",
   "icon": "images/icon.png"
