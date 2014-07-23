@@ -1,6 +1,6 @@
 var hiveInfo;
 var defaultAmountSatoshi = 5000000;
-var donationAddress = '142m1MpXHhymF4aASiWwYohe1Y55v5BQwc';
+var donationAddress = '1HLRg9C1GsfEVH555hgcjzDeas14jen2Cn';
 
 var init = function() {
   $('.headText2').hide();
